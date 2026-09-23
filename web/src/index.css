@@ -1,0 +1,9 @@
+/* Placeholder styles — the real visual design comes after the screenshots. */
+:root { font-family: system-ui, sans-serif; line-height: 1.5; color-scheme: light dark; }
+body { margin: 0; }
+main { max-width: 720px; margin: 0 auto; padding: 2rem 1rem; }
+table { border-collapse: collapse; width: 100%; }
+td, th { text-align: left; padding: 0.35rem 0.5rem; border-bottom: 1px solid #8884; }
+.ok { color: #1a8a3a; } .bad { color: #c0392b; }
+form { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+input, button { font: inherit; padding: 0.4rem 0.6rem; }
