@@ -1,0 +1,16 @@
+{
+  "name": "tunebox",
+  "private": true,
+  "scripts": {
+    "db:start": "supabase start",
+    "db:stop": "supabase stop",
+    "db:reset": "supabase db reset",
+    "db:status": "supabase status",
+    "db:new-migration": "supabase migration new",
+    "setup": "npm install && npm --prefix web install",
+    "dev": "npm --prefix web run dev"
+  },
+  "devDependencies": {
+    "supabase": "^2.117.0"
+  }
+}
