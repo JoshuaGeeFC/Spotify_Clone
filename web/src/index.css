@@ -1,9 +1,131 @@
-/* Placeholder styles — the real visual design comes after the screenshots. */
-:root { font-family: system-ui, sans-serif; line-height: 1.5; color-scheme: light dark; }
-body { margin: 0; }
-main { max-width: 720px; margin: 0 auto; padding: 2rem 1rem; }
+/* Simple styling: pale blue background, black text.
+   Restyle freely once there's a visual direction. */
+:root {
+  --bg: #e3f0fb;          /* pale blue */
+  --text: #000000;
+  --muted: #3a4a5c;       /* secondary text, still dark enough to read */
+  --surface: #ffffff;
+  --accent: #1f5fa8;      /* buttons and links */
+  --border: #b9d3ec;
+  --error: #b3261e;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.5;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+main {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+
+a { color: var(--accent); }
+h1 { margin: 0 0 0.25rem; line-height: 1.2; }
+.error { color: var(--error); }
+.ok { color: #1a7a34; }
+.bad { color: var(--error); }
+
+.back-link { display: inline-block; margin-bottom: 1.5rem; }
+
+/* ---------- song page ---------- */
+.song {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.cover {
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 0 auto 1.25rem;
+}
+
+.cover-placeholder {
+  display: grid;
+  place-items: center;
+  background: var(--bg);
+  color: var(--accent);
+  font-size: 4rem;
+}
+
+.song-info { text-align: center; margin-bottom: 1.25rem; }
+.artist { margin: 0; font-size: 1.15rem; }
+.uploader { margin: 0.25rem 0 0; color: var(--muted); font-size: 0.9rem; }
+
+/* ---------- player ---------- */
+.player {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.play-button {
+  flex: none;
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+.play-button svg { width: 1.5rem; height: 1.5rem; fill: currentColor; }
+.play-button:disabled { opacity: 0.4; cursor: not-allowed; }
+.play-button:focus-visible { outline: 3px solid var(--text); outline-offset: 2px; }
+
+.scrubber { flex: 1; min-width: 180px; }
+.scrubber input { width: 100%; accent-color: var(--accent); }
+.times {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+}
+.player .error { flex-basis: 100%; margin: 0; }
+
+/* ---------- home list ---------- */
+.song-list { list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: 0.5rem; }
+.song-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  text-decoration: none;
+}
+.song-row:hover { border-color: var(--accent); }
+.thumb {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 6px;
+  object-fit: cover;
+  flex: none;
+  font-size: 1.5rem;
+}
+
+/* ---------- /check page ---------- */
 table { border-collapse: collapse; width: 100%; }
-td, th { text-align: left; padding: 0.35rem 0.5rem; border-bottom: 1px solid #8884; }
-.ok { color: #1a8a3a; } .bad { color: #c0392b; }
+td, th { text-align: left; padding: 0.35rem 0.5rem; border-bottom: 1px solid var(--border); }
 form { display: flex; gap: 0.5rem; flex-wrap: wrap; }
-input, button { font: inherit; padding: 0.4rem 0.6rem; }
+input, button { font: inherit; }
+form input, form button { padding: 0.4rem 0.6rem; }
