@@ -20,12 +20,12 @@ export default function HomePage() {
 
   return (
     <main>
-      <h1>Tunebox</h1>
+      <h1>All songs</h1>
 
       {error && <p className="error">Couldn't load songs: {error}</p>}
       {!error && songs === null && <p>Loading songs…</p>}
       {songs?.length === 0 && (
-        <p>No songs yet. Add one in the Supabase dashboard (Table Editor → songs).</p>
+        <p>No songs yet. <Link to="/upload">Upload the first one.</Link></p>
       )}
 
       {songs?.length > 0 && (
