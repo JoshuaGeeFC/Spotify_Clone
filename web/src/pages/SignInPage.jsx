@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
+import DemoButton from '../components/DemoButton'
 
 export default function SignInPage() {
   const navigate = useNavigate()
@@ -36,6 +37,7 @@ export default function SignInPage() {
         {error && <p className="error" role="alert">{error}</p>}
         <button type="submit" className="primary" disabled={busy}>{busy ? 'Signing in…' : 'Sign in'}</button>
       </form>
+      <p>Just looking? <DemoButton className="text-button" label="Try the demo instead" /></p>
       <p>New here? <Link to={`/signup?next=${encodeURIComponent(next)}`}>Create an account</Link></p>
     </main>
   )

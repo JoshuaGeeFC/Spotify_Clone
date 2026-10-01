@@ -226,3 +226,25 @@ button.primary:disabled { opacity: 0.55; cursor: not-allowed; }
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
+
+/* ---------- demo ---------- */
+.notice {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  border-radius: 8px;
+  padding: 0.9rem 1rem;
+  margin-bottom: 1.5rem;
+}
+.notice p { margin: 0 0 0.6rem; }
+.notice p:last-child { margin-bottom: 0; }
+.badge {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.15rem 0.6rem;
+  font-size: 0.85rem;
+}
+.demo-button { display: inline-flex; flex-direction: column; gap: 0.35rem; }
+.demo-button .error { font-size: 0.85rem; }
+.text-button { font: inherit; }

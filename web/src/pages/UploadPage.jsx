@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { supabase } from '../lib/supabase'
 import { useAuth } from '../lib/auth'
 
@@ -125,6 +125,18 @@ export default function UploadPage() {
   }
 
   const busy = status !== null
+
+  if (user.is_anonymous) {
+    return (
+      <main className="narrow">
+        <h1>Upload a song</h1>
+        <div className="notice">
+          <p>Demo accounts can't upload files. Exit the demo and create an account to upload your own music.</p>
+          <Link to="/me">Back to your demo songs</Link>
+        </div>
+      </main>
+    )
+  }
 
   return (
     <main className="narrow">
