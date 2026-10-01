@@ -7,6 +7,8 @@ import SignInPage from './pages/SignInPage'
 import SignUpPage from './pages/SignUpPage'
 import UploadPage from './pages/UploadPage'
 import MyLibraryPage from './pages/MyLibraryPage'
+import PlaylistsPage from './pages/PlaylistsPage'
+import PlaylistPage from './pages/PlaylistPage'
 import SystemCheck from './pages/SystemCheck'
 
 function NotFound() {
@@ -29,6 +31,8 @@ export default function App() {
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/upload" element={<RequireAuth><UploadPage /></RequireAuth>} />
         <Route path="/me" element={<RequireAuth><MyLibraryPage /></RequireAuth>} />
+        <Route path="/playlists" element={<RequireAuth><PlaylistsPage /></RequireAuth>} />
+        <Route path="/playlists/:id" element={<PlaylistPage />} />
         <Route path="/check" element={<SystemCheck />} />
         <Route path="*" element={<NotFound />} />
       </Routes>

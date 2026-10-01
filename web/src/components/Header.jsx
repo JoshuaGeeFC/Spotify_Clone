@@ -22,6 +22,7 @@ export default function Header() {
               {isDemo && <span className="badge">Demo account</span>}
               {!isDemo && <Link to="/upload" className="button-link">Upload</Link>}
               <Link to="/me">Your songs</Link>
+              <Link to="/playlists">Playlists</Link>
               {!isDemo && <span className="signed-in-as">{profile?.display_name ?? user.email}</span>}
               <button type="button" className="text-button" onClick={handleSignOut}>
                 {isDemo ? 'Exit demo' : 'Sign out'}

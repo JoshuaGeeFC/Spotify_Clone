@@ -34,8 +34,8 @@ export default function MyLibraryPage() {
       {isDemo && (
         <div className="notice">
           <p>
-            <strong>You're in a demo account.</strong> It came with a few songs so you can look
-            around, play music and leave comments. Anything you change only affects your copy,
+            <strong>You're in a demo account.</strong> It came with a few songs and a sample
+            playlist so you can look around, play music, make playlists and leave comments. Anything you change only affects your copy,
             and the account is deleted after 24 hours.
           </p>
           <p>

@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom'
 import { supabase, publicUrl } from '../lib/supabase'
 import AudioPlayer from '../components/AudioPlayer'
 import Comments from '../components/Comments'
+import AddToPlaylist from '../components/AddToPlaylist'
 
 // Milestone 1: one song, with its cover, title, artist, uploader and a player.
 export default function SongPage() {
@@ -78,6 +79,7 @@ export default function SongPage() {
         </div>
 
         <AudioPlayer key={song.audio_path} src={publicUrl('audio', song.audio_path)} title={song.title} />
+        <AddToPlaylist songId={song.id} />
       </article>
 
       <Comments songId={song.id} />

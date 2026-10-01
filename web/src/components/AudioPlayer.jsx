@@ -1,15 +1,10 @@
 import { useRef, useState } from 'react'
-
-function formatTime(seconds) {
-  if (!Number.isFinite(seconds) || seconds < 0) return '0:00'
-  const m = Math.floor(seconds / 60)
-  const s = Math.floor(seconds % 60)
-  return `${m}:${s.toString().padStart(2, '0')}`
-}
+import { formatTime } from '../lib/format'
 
 // Plays one audio file with play/pause, a seek bar, and elapsed/total time.
 // Render it with key={src} so it starts fresh when the song changes.
-export default function AudioPlayer({ src, title }) {
+// autoPlay starts it immediately; onEnded runs when the song finishes.
+export default function AudioPlayer({ src, title, autoPlay = false, onEnded }) {
   const audioRef = useRef(null)
   const [playing, setPlaying] = useState(false)
   const [current, setCurrent] = useState(0)
@@ -43,9 +38,10 @@ export default function AudioPlayer({ src, title }) {
         ref={audioRef}
         src={src}
         preload="metadata"
+        autoPlay={autoPlay}
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}
-        onEnded={() => setPlaying(false)}
+        onEnded={() => { setPlaying(false); onEnded?.() }}
         onTimeUpdate={(e) => setCurrent(e.currentTarget.currentTime)}
         onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
         onError={() => setError('The audio file could not be loaded. Check the audio_path in the songs table.')}

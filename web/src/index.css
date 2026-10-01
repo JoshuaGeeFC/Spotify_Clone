@@ -248,3 +248,79 @@ button.primary:disabled { opacity: 0.55; cursor: not-allowed; }
 .demo-button { display: inline-flex; flex-direction: column; gap: 0.35rem; }
 .demo-button .error { font-size: 0.85rem; }
 .text-button { font: inherit; }
+
+/* ---------- playlists ---------- */
+button.secondary {
+  font: inherit;
+  padding: 0.55rem 0.9rem;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--accent);
+  cursor: pointer;
+}
+button.secondary:disabled { opacity: 0.55; cursor: not-allowed; }
+.danger { color: var(--error); }
+.form .checkbox { display: flex; align-items: center; gap: 0.5rem; font-weight: 400; }
+.create-playlist { margin-top: 2rem; }
+.create-playlist h2 { font-size: 1.2rem; }
+
+.playlist-header { margin-bottom: 1.5rem; }
+.playlist-header p { margin: 0.25rem 0; }
+.playlist-actions { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin-top: 1rem; }
+
+.now-playing {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+.now-playing p { margin: 0 0 0.75rem; }
+
+.playlist-tracks { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.4rem; }
+.track {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.6rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+}
+.track.current { border-color: var(--accent); border-width: 2px; }
+.track-play {
+  flex: none;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font: inherit;
+  cursor: pointer;
+}
+.track-play:hover { border-color: var(--accent); }
+.thumb.small { width: 2.75rem; height: 2.75rem; font-size: 1.1rem; }
+.track-title { flex: 1; min-width: 0; color: var(--text); text-decoration: none; overflow-wrap: anywhere; }
+.track-time { font-variant-numeric: tabular-nums; font-size: 0.9rem; }
+
+.add-to-playlist {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+.add-to-playlist label { font-weight: 600; }
+.add-to-playlist select {
+  font: inherit;
+  padding: 0.45rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+  max-width: 100%;
+}
