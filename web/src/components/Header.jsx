@@ -19,9 +19,9 @@ export default function Header() {
         <nav aria-label="Account">
           {loading ? null : user ? (
             <>
-              {isDemo && <span className="badge">Demo account</span>}
+              {isDemo && <span className="badge">Demo Account</span>}
               {!isDemo && <Link to="/upload" className="button-link">Upload</Link>}
-              <Link to="/me">Your songs</Link>
+              <Link to="/me">Your Songs</Link>
               <Link to="/playlists">Playlists</Link>
               {!isDemo && <span className="signed-in-as">{profile?.display_name ?? user.email}</span>}
               <button type="button" className="text-button" onClick={handleSignOut}>
@@ -31,8 +31,8 @@ export default function Header() {
           ) : (
             <>
               <DemoButton className="text-button" label="Try the demo" />
-              <Link to="/signin">Sign in</Link>
-              <Link to="/signup" className="button-link">Sign up</Link>
+              <Link to="/signin">Sign In</Link>
+              <Link to="/signup" className="button-link">Sign Up</Link>
             </>
           )}
         </nav>
