@@ -25,12 +25,12 @@ export default function Header() {
               <Link to="/playlists">Playlists</Link>
               {!isDemo && <span className="signed-in-as">{profile?.display_name ?? user.email}</span>}
               <button type="button" className="text-button" onClick={handleSignOut}>
-                {isDemo ? 'Exit demo' : 'Sign out'}
+                {isDemo ? 'Exit Demo' : 'Sign Out'}
               </button>
             </>
           ) : (
             <>
-              <DemoButton className="text-button" label="Try the demo" />
+              <DemoButton className="text-button" label="Try Demo" />
               <Link to="/signin">Sign In</Link>
               <Link to="/signup" className="button-link">Sign Up</Link>
             </>
